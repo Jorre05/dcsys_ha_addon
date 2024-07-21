@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: DCSys add-on
-version: "1.1.0"
+version: "1.1.1"
 slug: example
 description: DCSys add-on
 url: "https://github.com/Jorre05/dcsys_ha_addon"
@@ -14,4 +14,5 @@ options:
   ha_hostname: "dcsys.struyve.lan"
 schema:
   message: "str?"
+  ha_hostname: "str?"
 #image: "ghcr.io/home-assistant/{arch}-addon-dcsys"
