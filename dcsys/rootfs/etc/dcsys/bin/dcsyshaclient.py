@@ -9,7 +9,7 @@ import signal
 import websockets
 
 token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjMGRiZDE1YzAzM2M0YTJmODQzYmM4NWJmMzg0OTg0OSIsImlhdCI6MTY2MTA2NDQwMSwiZXhwIjoxOTc2NDI0NDAxfQ.8QACIAUEVl7hs8gV0obOz_mwxeElkxa8XVkyfI1Rcvg"
-host = "localhost"
+host = "dcsys.struyve.lan"
 port = 8123
 verder_doen = True
 
