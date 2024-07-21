@@ -13,4 +13,4 @@ options:
   message: "Hello DCSys from config..."
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/{arch}-addon-dcsys"
+#image: "ghcr.io/home-assistant/{arch}-addon-dcsys"
