@@ -8,16 +8,21 @@
 
 # Declare variables
 declare message
+declare ha_hostname
 
 ## Get the 'message' key from the user config options.
 message=$(bashio::config 'message')
+message=$(bashio::config 'ha_hostname')
 
 ## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
+bashio::log.info "${message:="DCSys World..."}"
+bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
 
 ## Run your program
 #exec /usr/bin/my_program
+exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
-exec $DCSYSROOT/bin/dcsysmodbusd -h 10.0.0.22 -s 1
-exec $DCSYSROOT/bin/dcsysfluviusd -h 10.0.0.23 -l /tmp/dcsysfluviusd.log
-exec $DCSYSROOT/bin/dcsysbalanced -s 3 -l /tmp/dcsysbalanced.log
+exec $DCSYSROOT/bin/dcsysmodbusd -h 10.0.0.22 -s 1 -l /share/dcsysmodbusd.log
+exec $DCSYSROOT/bin/dcsysfluviusd -h 10.0.0.23 -l /share/dcsysfluviusd.log
+exec $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
+exec /usr/bin/my_program
