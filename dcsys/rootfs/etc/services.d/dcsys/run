@@ -22,7 +22,10 @@ bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
 #exec /usr/bin/my_program
 exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
+bashio::log.info "Na export"
 exec $DCSYSROOT/bin/dcsysmodbusd -h 10.0.0.22 -s 1 -l /share/dcsysmodbusd.log
+bashio::log.info "Na dcsysmodbusd"
 exec $DCSYSROOT/bin/dcsysfluviusd -h 10.0.0.23 -l /share/dcsysfluviusd.log
+bashio::log.info "Na dcsysfluviusd"
 exec $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
-exec /usr/bin/my_program
+bashio::log.info "Na dcsysbalanced"
