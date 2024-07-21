@@ -21,6 +21,7 @@ bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
 ## Run your program
 #exec /usr/bin/my_program
 exec /usr/bin/my_program
+bashio::log.info "Voor export"
 export DCSYSROOT=/etc/dcsys
 bashio::log.info "Na export"
 exec $DCSYSROOT/bin/dcsysmodbusd -h 10.0.0.22 -s 1 -l /share/dcsysmodbusd.log
