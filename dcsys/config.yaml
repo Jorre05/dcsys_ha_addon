@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: DCSys add-on
-version: "1.1.8"
+version: "1.1.9"
 slug: dcsys
 description: DCSys add-on
 url: "https://github.com/Jorre05/dcsys_ha_addon"
@@ -10,9 +10,11 @@ init: false
 map:
   - share:rw
 options:
-  message: "Hello DCSys from config..."
   ha_hostname: "dcsys.struyve.lan"
+  fluvius_hostname: "fluvius.struyve.lan"
+  inverter_hostname: "inverter.struyve.lan"
 schema:
-  message: "str?"
   ha_hostname: "str?"
+  fluvius_hostname: "str?"
+  inverter_hostname: "str?"
 #image: "ghcr.io/home-assistant/{arch}-addon-dcsys"
