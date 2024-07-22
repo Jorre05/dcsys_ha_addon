@@ -23,7 +23,7 @@ bashio::log.info "${inverter_hostname:="inverter.struyve.lan"}"
 #exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
 $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
-export PID=$!
+export PID=`pidof dcsysbalanced`
 bashio::log.info $PID
 wait $PID
 bashio::log.info "Na dcsysblanced"
