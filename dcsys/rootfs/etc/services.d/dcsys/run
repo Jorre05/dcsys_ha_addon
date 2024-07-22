@@ -11,9 +11,9 @@ declare message
 declare ha_hostname
 
 ## Get the user config options.
-ha_hostname=$(bashio::config 'dcsys.struyve.lan')
-fluvius_hostname=$(bashio::config 'fluvius.struyve.lan')
-inverter_hostname=$(bashio::config 'inverter.struyve.lan')
+ha_hostname=$(bashio::config 'ha_hostname')
+fluvius_hostname=$(bashio::config 'fluvius_hostname')
+inverter_hostname=$(bashio::config 'inverter_hostname')
 
 bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
 bashio::log.info "${fluvius_hostname:="fluvius.struyve.lan"}"
