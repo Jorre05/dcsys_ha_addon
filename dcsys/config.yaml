@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: DCSys add-on
-version: "1.1.19"
+version: "1.1.20"
 slug: dcsys
 description: DCSys add-on
 url: "https://github.com/Jorre05/dcsys_ha_addon"
