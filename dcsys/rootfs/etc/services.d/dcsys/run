@@ -25,6 +25,8 @@ export DCSYSROOT=/etc/dcsys
 $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
 export PID=`pidof dcsysbalanced`
 bashio::log.info $PID
+ps -fe |grep dcsysbalanced
+ls /proc/$PID
 wait $PID
 bashio::log.info "Na dcsysblanced"
 $DCSYSROOT/bin/dcsysfluviusd -h ${fluvius_hostname} -l /share/dcsysfluviusd.log
