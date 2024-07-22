@@ -12,17 +12,8 @@ declare ha_hostname
 
 ## Get the user config options.
 ha_hostname=$(bashio::config 'ha_hostname')
-fluvius_hostname=$(bashio::config 'fluvius_hostname')
-inverter_hostname=$(bashio::config 'inverter_hostname')
-
 bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
-bashio::log.info "${fluvius_hostname:="fluvius.struyve.lan"}"
-bashio::log.info "${inverter_hostname:="inverter.struyve.lan"}"
 
-## Run your program
 #exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
 $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
-bashio::log.info "Na dcsysblanced"
-#$DCSYSROOT/bin/dcsysfluviusd -h ${fluvius_hostname} -l /share/dcsysfluviusd.log
-#$DCSYSROOT/bin/dcsysmodbusd -h ${inverter_hostname} -s 1 -l /share/dcsysmodbusd.log
