@@ -12,6 +12,7 @@ RUN pip install websockets
 RUN apk add wget
 RUN apk add libc6-compat
 RUN apk add libpthread-stubs
+RUN apk add libmodbus
 
 # Copy root filesystem
 COPY rootfs /

@@ -10,20 +10,21 @@
 declare message
 declare ha_hostname
 
-## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
-message=$(bashio::config 'ha_hostname')
+## Get the user config options.
+ha_hostname=$(bashio::config 'dcsys.struyve.lan')
+fluvius_hostname=$(bashio::config 'fluvius.struyve.lan')
+inverter_hostname=$(bashio::config 'inverter.struyve.lan')
 
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="DCSys World..."}"
 bashio::log.info "${ha_hostname:="dcsys.struyve.lan"}"
+bashio::log.info "${fluvius_hostname:="fluvius.struyve.lan"}"
+bashio::log.info "${inverter_hostname:="inverter.struyve.lan"}"
 
 ## Run your program
-exec /usr/bin/my_program
+#exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
-exec $DCSYSROOT/bin/dcsysmodbusd -h 10.0.0.22 -s 1 -l /share/dcsysmodbusd.log
+exec $DCSYSROOT/bin/dcsysmodbusd -h ${inverter_hostname} -s 1 -l /share/dcsysmodbusd.log
 bashio::log.info "Na dcsysmodbusd"
-exec $DCSYSROOT/bin/dcsysfluviusd -h 10.0.0.23 -l /share/dcsysfluviusd.log
+exec $DCSYSROOT/bin/dcsysfluviusd -h ${fluvius_hostname} -l /share/dcsysfluviusd.log
 bashio::log.info "Na dcsysfluviusd"
 exec $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
 bashio::log.info "Na dcsysbalanced"
