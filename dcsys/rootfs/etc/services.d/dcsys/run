@@ -20,7 +20,7 @@ bashio::log.info "${fluvius_hostname:="fluvius.struyve.lan"}"
 bashio::log.info "${inverter_hostname:="inverter.struyve.lan"}"
 
 ## Run your program
-#exec /usr/bin/my_program
+exec /usr/bin/my_program
 export DCSYSROOT=/etc/dcsys
 $DCSYSROOT/bin/dcsysbalanced -s 3 -l /share/dcsysbalanced.log
 bashio::log.info "Na dcsysblanced"
