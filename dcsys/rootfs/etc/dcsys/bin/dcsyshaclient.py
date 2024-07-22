@@ -66,12 +66,12 @@ def signal_handler(sig, frame):
 async def initSocket():
 
     try:
-        os.mkfifo("pipe1")
+        os.mkfifo("/tmp/pipe1")
     except OSError as oe: 
         if oe.errno != errno.EEXIST:
             print("Error occured")
 
-    fifo = open("pipe1","w",buffering=1)
+    fifo = open("/tmp/pipe1","w",buffering=1)
     fifo.write("$")
     fifo.flush()
 
