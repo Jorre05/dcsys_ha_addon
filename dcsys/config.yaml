@@ -6,6 +6,7 @@ description: DCSys add-on
 url: "https://github.com/Jorre05/dcsys_ha_addon"
 arch:
   - aarch64
+  - amd64
 init: false
 map:
   - share:rw
